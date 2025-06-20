@@ -1,0 +1,15 @@
+creditvision_biqquery:
+  outputs:
+    dev:
+      dataset: dev__cv__raw_area__1
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      # keyfile: ./secrets/gcp/bigquery.json
+      keyfile: "{{ env_var('BIGQUERY_KEYFILE') }}"
+      location: asia-southeast1
+      method: service-account
+      priority: interactive
+      project: creditvision-lakehouse-as-1
+      threads: 4
+      type: bigquery
+  target: dev
